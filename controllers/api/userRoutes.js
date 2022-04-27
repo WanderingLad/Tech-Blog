@@ -5,7 +5,9 @@ const { readAndAppend, readFromFile } = require('../../utils/fsUtils');
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
-    
+
+    readAndAppend(userData, './seeds/userData.json');
+
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -40,7 +42,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
