@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Tech } = require('../../models');
 const withAuth = require('../../utils/auth');
+const { readAndAppend, readFromFile } = require('../../utils/fsUtils');
 
 router.post('/', withAuth, async (req, res) => {
   try {
@@ -8,6 +9,8 @@ router.post('/', withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
+
+    readAndAppend(newTech, './seeds/techData.json');
 
     res.status(200).json(newTech);
   } catch (err) {
