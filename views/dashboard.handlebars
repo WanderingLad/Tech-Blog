@@ -27,9 +27,10 @@
     <h3>Current Projects:</h3>
   {{#if tech.length}}
     {{#each tech as |tech|}}
+    {{tech.title}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{tech.id}}">{{tech.name}}</a></h4>
+        <h4><a href="/tech/{{tech.id}}">{{tech.title}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{tech.id}}">DELETE</button>

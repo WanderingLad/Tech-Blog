@@ -28,10 +28,22 @@ router.get('/dashboard', withAuth, async (req, res) => {
       include: [{ model: Tech }],
     });
 
+    const techData = await Tech.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
     const user = userData.get({ plain: true });
+
+    const tech = techData.map((techD) => techD.get({ plain: true }));
 
     res.render('dashboard', {
       ...user,
+      tech,
       logged_in: true
     });
   } catch (err) {
