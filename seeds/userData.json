@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "dan",
         "email": "dan@dan.com",
         "password": "dan"
@@ -15,5 +16,11 @@
         "name": "2",
         "email": "2@2.com",
         "password": "$2b$10$VSCx0TRqqnT12ZqyT8HNgOFUW6j7b4w96nYF59mUl3lzWrdRZzL6q"
+    },
+    {
+        "id": 4,
+        "name": "3",
+        "email": "3@3.com",
+        "password": "$2b$10$D.IQo.qk9vN5y6q3YDMpPeDiho9XAfNCNsd3INuYvFkXw8i3FZiWm"
     }
 ]

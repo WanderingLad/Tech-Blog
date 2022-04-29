@@ -1,3 +1,5 @@
+const { options } = require("../models/User");
+
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
@@ -19,4 +21,17 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  if_eq: (one, two) => {
+    if(one === two)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  },
+  setVar: (varName, varValue) => {
+    options.data.root[varName] = varValue;
+  }
 };
