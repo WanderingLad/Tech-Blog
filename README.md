@@ -18,6 +18,7 @@ npm install sequelize
 https://youtu.be/9-Uatq6cyn4
 
 ## Links
+* Heroku - https://tech-blog-james-reilly.herokuapp.com/
 * Repository - github.com/WanderingLad/Tech-Blog.git
 * test account: login: dan@dan.com / 12345678
 
