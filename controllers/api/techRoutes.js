@@ -3,6 +3,10 @@ const { Tech } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { readAndAppend, readFromFile } = require('../../utils/fsUtils');
 
+router.get('/', (req, res) =>
+    readFromFile('./seeds/techData.json').then((data) => res.json(JSON.parse(data)))
+);
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newTech = await Tech.create({

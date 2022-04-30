@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { User } = require('../../models');
 const { readAndAppend, readFromFile } = require('../../utils/fsUtils');
 
+router.get('/', (req, res) =>
+    readFromFile('./seeds/userData.json').then((data) => res.json(JSON.parse(data)))
+);
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
